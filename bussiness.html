@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Goods Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .login-form, .goods-form, .location-delivery, .payment-options, .search-bar, .account-management {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="file"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #218838;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery-item {
+            width: calc(33.333% - 20px);
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .gallery-item h3 {
+            margin: 10px 0 5px 0;
+            font-size: 1.2em;
+        }
+        .gallery-item p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #555;
+        }
+        .gallery-item .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .search-bar input[type="text"] {
+            width: 80%;
+            display: inline-block;
+        }
+        .search-bar button {
+            width: 18%;
+            display: inline-block;
+        }
+        .category-section {
+            margin-bottom: 40px;
+        }
+        .category-title {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .account-management h3 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Your Goods Marketplace</h1>
+    </header>
+
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <h2>Search for Goods</h2>
+            <form action="#" method="GET">
+                <input type="text" name="search" placeholder="Search for goods...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <!-- Post Goods Form with Categories -->
+        <div class="goods-form">
+            <h2>Post Goods for Sale</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <input type="text" name="goods_name" placeholder="Goods Name" required>
+                <textarea name="goods_description" placeholder="Goods Description" rows="4" required></textarea>
+                <input type="file" name="goods_images[]" accept="image/*" multiple required>
+                <input type="text" name="goods_price" placeholder="Price" required>
+                <select name="goods_category" required>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="home_goods">Home Goods</option>
+                    <option value="books">Books</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <input type="submit" value="Post Goods">
+            </form>
+        </div>
+
+        <!-- Categorized Image Gallery -->
+        <!-- Electronics -->
+        <div class="category-section">
+            <div class="category-title">Electronics</div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="electronics1.jpg" alt="Electronics Image 1">
+                    <h3>Smartphone</h3>
+                    <p>Latest model smartphone with great features</p>
+                    <p class="price">$700</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="electronics2.jpg" alt="Electronics Image 2">
+                    <h3>Laptop</h3>
+                    <p>High-performance laptop for all your needs</p>
+                    <p class="price">$1200</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+        <!-- Clothing -->
+        <div class="category-section">
+            <div class="category-title">Clothing</div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="clothing1.jpg" alt="Clothing Image 1">
+                    <h3>T-shirt</h3>
+                    <p>Comfortable cotton T-shirt in various sizes</p>
+                    <p class="price">$20</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="clothing2.jpg" alt="Clothing Image 2">
+                    <h3>Jacket</h3>
+                    <p>Stylish jacket for all seasons</p>
+                    <p class="price">$80</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+        <!-- Home Goods -->
+        <div class="category-section">
+            <div class="category-title">Home Goods</div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="home_goods1.jpg" alt="Home Goods Image 1">
+                    <h3>Coffee Maker</h3>
+                    <p>High-quality coffee maker for the perfect brew</p>
+                    <p class="price">$50</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="home_goods2.jpg" alt="Home Goods Image 2">
+                    <h3>Vacuum Cleaner</h3>
+                    <p>Efficient vacuum cleaner with powerful suction</p>
+                    <p class="price">$150</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+        <!-- Books -->
+        <div class="category-section">
+            <div class="category-title">Books</div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="book1.jpg" alt="Book Image 1">
+                    <h3>Fiction Novel</h3>
+                    <p>An engaging fiction novel with a thrilling story</p>
+                    <p class="price">$15</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="book2.jpg" alt="Book Image 2">
+                    <h3>Cookbook</h3>
+                    <p>Delicious recipes for every occasion</p>
+                    <p class="price">$25</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+        <!-- Payment Options -->
+        <div class="payment-options">
+            <h2>Payment Options</h2>
+            <form action="#" method="POST">
+                <label for="payment-method">Choose your payment method:</label>
+                <select id="payment-method" name="payment_method" required>
+                    <option value="usd">USD</option>
+                    <option value="bsb">BSB</option>
+                </select>
+                <input type="submit" value="Proceed to Payment">
+            </form>
+        </div>
+
+        <!-- Account Management -->
+        <div class="account-management">
+            <h2>Manage Payment Accounts</h2>
+            <form action="#" method="POST">
+                <h3>Add or Update Payment Account Details</h3>
+                <label for="platform">Select Payment Platform:</label>
+                <select id="platform" name="platform" required>
+                    <option value="e_transfer">E-Transfer</option>
+                    <option value="bsb">BSB</option>
+                    <option value="remitly">Remitly</option>
+                    <!-- Add more platforms as needed -->
+                </select>
+                <input type="text" name="account_number" placeholder="Account Number" required>
+                <input type="submit" value="Save Account Details">
+            </form>
+        </div>
+
+        <!-- Location and Delivery Information -->
+        <div class="location-delivery">
+            <h2>Your Location and Delivery</h2>
+            <p><strong>Location:</strong> Sydney, Australia</p>
+            <p><strong>Delivery:</strong> We offer   delivery across Sydney and nearby areas.</p>
+        </div>
+    </div>
+</body>
+</html>
